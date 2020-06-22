@@ -1,0 +1,51 @@
+<!-- 22.06.2020 Cod3r Vue -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+   <p>{{ contador }}</p>
+   <button v-on:click="somar(5)">Somar 5</button>
+   <button v-on:click="diminuir">Diminuir 1</button>
+   <hr>
+   <p v-on:mousemove="atualizarXY">
+      Mouse {{ x }} e {{ y }}
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quisquam repellendus nihil, error voluptas harum, perspiciatis magnam ut dignissimos officiis quae laborum incidunt ullam voluptatibus cum facere corporis nemo. Eum.
+      <span v-on:mousemove.stop>PARAR AQUI!!!</span>
+   </p>
+
+   <a v-on:click.prevent href="http://google.com">Google (o link não funciona porque usei v-on:click.prevent)</a>
+   <hr>
+
+   <input type="text" v-on:keyup="exibirAlerta">
+   <input type="text" v-on:keyup.enter="exibirAlerta" placeholder="Alerta com Enter">
+</div>
+
+<script>
+   new Vue({
+      el: '#app',
+      data: {
+         contador: 0,
+         x: 0,
+         y: 0
+      },
+      methods: {
+         somar(passo) {
+            this.contador += passo
+         },
+         diminuir() {
+            this.contador--
+         },
+         atualizarXY(e) {
+            this.x = e.clientX
+            this.y = e.clientY
+         },
+         exibirAlerta() {
+            alert('ALERTA!!!')
+         }
+         // parar(e) {
+         //    e.stopPropagation()
+         // }
+      }
+   })
+</script>
