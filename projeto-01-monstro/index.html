@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Projeto Cod3r 01 -Monstro</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div id="app">
+		<h1>Matador de Monstros</h1>
+		
+		<div class="panel scores">
+			<div class="score">
+				<h2>Jogador</h2>
+				<div class="life-bar">
+					<div 
+					class="life" 
+					:class="{danger: playerLife <= 20}"
+					:style="{width: playerLife + '%'}">					
+				</div>
+			</div>
+			<div>{{ playerLife }}%</div>
+		</div>
+
+		<div class="score">
+			<h2>Monstro</h2>
+			<div class="life-bar">
+				<div class="life"
+					class="life" 
+					:class="{danger: monsterLife <= 20}"
+					:style="{width: monsterLife + '%'}">		
+				</div>
+			</div>
+			<div>{{ monsterLife }}%</div>
+		</div>
+	</div>
+
+
+	<div class="panel result"></div>
+	<div class="panel buttons"></div>
+	<div class="panel logs"></div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
