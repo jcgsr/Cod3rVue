@@ -1,5 +1,4 @@
-new Vue({
-
+new Vue({	
 	el: "#app",
 	data: {
 		running: false,
@@ -17,7 +16,7 @@ new Vue({
 			this.running = true,
 			this.playerLife = 100,
 			this.monsterLife = 100,
-			this.log = []
+			this.logs = []
 		},
 		attack(special) {
 			this.hurt('monsterLife', 5, 10, special, 'Jogador', 'Monstro', 'player')
@@ -46,12 +45,15 @@ new Vue({
 		},
 		registerLog(txt, cls) {
 			this.logs.unshift({ txt, cls })
+		},
+		date(){
+
 		}
 	},
 	watch: {
 		hasResult(value) {
 			if (value) this.running = false
 		}
-}
+	}
 
 })
